@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: local-demo-only
+      POSTGRES_DB: sentinel
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel -d sentinel"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    security_opt: ["no-new-privileges:true"]
+volumes:
+  database:

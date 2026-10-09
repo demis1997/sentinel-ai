@@ -1,0 +1,50 @@
+{
+  "id": "96df6443-822a-4ea5-b9bc-5f375b8306fc",
+  "status": "partial",
+  "revision": "6c35b6047f1c6f3fcdf0356ec1f3d3cdfa24d1dfa8de2fd2b71ccab0915ab9cc",
+  "error": null,
+  "analyzers": [
+    {
+      "id": "5c591bba-0f47-47e5-ad15-c89695bbfed0",
+      "tool": "semgrep",
+      "version": "unknown",
+      "status": "unavailable",
+      "findings": [],
+      "raw": "",
+      "error": "Sandbox has not passed operator isolation validation",
+      "duration_ms": 0
+    },
+    {
+      "id": "6c1bd5c9-a229-4bd0-831a-3fc7d1d4f194",
+      "tool": "sentinel-lexical",
+      "version": "0.1.0",
+      "status": "completed",
+      "findings": [
+        {
+          "rule": "low-level-call",
+          "severity": "info",
+          "confidence": "low",
+          "path": "ExternalCall.sol",
+          "start": 11,
+          "end": 11,
+          "summary": "Review external call and state ordering",
+          "evidence": "        (bool ok,) = msg.sender.call{value: amount}(\"\");",
+          "strength": "plausible_unverified"
+        }
+      ],
+      "raw": "[{\"rule\": \"low-level-call\", \"severity\": \"info\", \"confidence\": \"low\", \"path\": \"ExternalCall.sol\", \"start\": 11, \"end\": 11, \"summary\": \"Review external call and state ordering\", \"evidence\": \"        (bool ok,) = msg.sender.call{value: amount}(\\\"\\\");\", \"strength\": \"plausible_unverified\"}]",
+      "error": null,
+      "duration_ms": 0
+    },
+    {
+      "id": "33f0070a-0c14-4f91-9d9d-ed1143051935",
+      "tool": "slither",
+      "version": "unknown",
+      "status": "unavailable",
+      "findings": [],
+      "raw": "",
+      "error": "Sandbox has not passed operator isolation validation",
+      "duration_ms": 0
+    }
+  ]
+}

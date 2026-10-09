@@ -1,0 +1,6 @@
+rules:
+  - id: sentinel.origin-review
+    languages: [solidity]
+    message: Review tx.origin usage and authorization assumptions. This is static evidence only.
+    severity: WARNING
+    pattern: tx.origin
